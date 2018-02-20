@@ -35,7 +35,7 @@ public class TestQuestCSSSR {
             }
         }
 
-        // Удаляем ключи и зщначения, если меньше 2х слов, далее сортируем значение
+        // Удаляем ключи и значения, если меньше 2х слов, далее сортируем значение
         for (Map.Entry<String, List<String>> map : totalMap.entrySet()) {
             if (map.getValue().size() < 2) {
                 totalMap.remove(map.getKey());
