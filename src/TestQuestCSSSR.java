@@ -35,14 +35,22 @@ public class TestQuestCSSSR {
             }
         }
 
-        // Удаляем ключи и зщначения, если меньше 2х слов, далее сортируем значение
+        // Удаляем ключи и значения, если меньше 2х слов, далее сортируем значение
         for (Map.Entry<String, List<String>> map : totalMap.entrySet()) {
             if (map.getValue().size() < 2) {
                 totalMap.remove(map.getKey());
             }
             Collections.sort(map.getValue(), new Comparator<String>() {
                 public int compare(String o1, String o2) {
-                    return o1.toString().compareTo(o2.toString());
+
+                    // Проверяем, если чило символов не равно 0, то сортируем по числу
+                    if (o2.length() - o1.length() != 0) {
+                        return o2.length() - o1.length();
+                    } else {
+
+                        // Иначе по алфавиту
+                        return o1.toString().compareTo(o2.toString());
+                    }
                 }
             });
         }
