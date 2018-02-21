@@ -43,7 +43,7 @@ public class TestQuestCSSSR {
             Collections.sort(map.getValue(), new Comparator<String>() {
                 public int compare(String o1, String o2) {
 
-                    // Проверяем, если чило символов не равно 0, то сортируем по числу
+                    // Проверяем, если число разницы символов не равно 0, то сортируем по числу
                     if (o2.length() - o1.length() != 0) {
                         return o2.length() - o1.length();
                     } else {
